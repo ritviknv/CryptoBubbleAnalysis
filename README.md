@@ -1,6 +1,6 @@
 # CryptoBubbleAnalysis
 
-This repository includes all the code I used to analytically compare the cryptocurrency bubble and the dotcom bubble. Below is an overview of each file: 
+This repository includes all the code I used to analytically compare the cryptocurrency bubble and the dotcom bubble. This analysis can be found on my Medium website (https://medium.com/@ritvikvasudevan). Below is an overview of each file: 
 
 main.py: this is where most of the analysis was conducted. 
 
