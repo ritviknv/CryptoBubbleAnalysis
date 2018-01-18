@@ -2,6 +2,7 @@ import numpy as np
 from numpy.linalg import norm
 from scipy import interpolate
 from scipy.spatial.distance import euclidean
+from scipy.stats import f
 from fastdtw import fastdtw
 import csv
 from datetime import date, timedelta
@@ -69,6 +70,12 @@ y = np.array(normalizedBTCPrices)
 
 #compute dtw
 distance, path = fastdtw(x, y, dist = euclidean)
+
+#run F-test
+FStat = analysisFunctions.computeFStatistic(path)
+p = 1.0 - f.cdf(FStat, len(y)-2, len(y)-2)
+print("p-value: {:.5f}".format(p))
+print(FStat)
 
 #generate subsequent plots
 analysisFunctions.plotScatterWithTwoSeries(normalizedStockSums, normalizedBTCPrices)
